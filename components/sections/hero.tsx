@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, floatAnimation, pulseAnimation, glowAnimation, bounceIn } from "@/lib/animations";
+import { fadeInUp, bounceIn } from "@/lib/animations";
 import { siteConfig } from "@/config/site";
 
 export default function Hero() {

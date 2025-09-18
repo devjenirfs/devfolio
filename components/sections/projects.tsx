@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, scaleIn, bounceIn, glowAnimation } from "@/lib/animations";
+import { fadeInUp, staggerContainer, bounceIn } from "@/lib/animations";
 
 export default function Projects() {
   // Real case studies with impact and metrics

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function About() {
   const skills = [
