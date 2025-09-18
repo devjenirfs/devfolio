@@ -37,9 +37,49 @@ export default function Hero() {
           variants={fadeInUp}
           className="space-y-8"
         >
+          {/* Profile Photo */}
+          <motion.div
+            variants={bounceIn}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative">
+              <motion.div
+                className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#84ADFF] shadow-2xl"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(132, 173, 255, 0.6)"
+                }}
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(132, 173, 255, 0.3)",
+                    "0 0 40px rgba(132, 173, 255, 0.6)",
+                    "0 0 20px rgba(132, 173, 255, 0.3)"
+                  ]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <img
+                  src="/jeniffer.jpg"
+                  alt="Jeniffer Souza - Software Engineer"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-2 -right-2 w-12 h-12 bg-[#84ADFF] rounded-full flex items-center justify-center text-[#101F3D] font-bold text-xl"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                👋
+              </motion.div>
+            </div>
+          </motion.div>
           <motion.h1 
             variants={bounceIn}
-            className="text-5xl md:text-7xl font-bold tracking-tight"
+            className="text-4xl md:text-6xl font-bold tracking-tight"
           >
             Hi, I&apos;m{" "}
             <motion.span 

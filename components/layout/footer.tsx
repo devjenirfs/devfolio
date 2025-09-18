@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 
 export default function Footer() {
@@ -7,6 +8,29 @@ export default function Footer() {
     <footer className="bg-[#101F3D] text-white py-16 border-t border-[#84ADFF]/20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center space-y-8">
+          {/* Profile Photo in Footer */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mb-6"
+          >
+            <motion.div
+              className="w-24 h-24 rounded-full overflow-hidden border-2 border-[#84ADFF] shadow-lg"
+              whileHover={{ 
+                scale: 1.1,
+                boxShadow: "0 0 20px rgba(132, 173, 255, 0.5)"
+              }}
+            >
+              <img
+                src="/jeniffer.jpg"
+                alt="Jeniffer Souza"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </motion.div>
+          
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">
               Let&apos;s build something great.
