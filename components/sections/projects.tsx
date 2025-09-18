@@ -4,34 +4,37 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Projects() {
-  // Placeholder projects - will be replaced with content from content/projects/
+  // Real projects based on Jeniffer's experience
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution built with Next.js, featuring user authentication, payment integration, and admin dashboard.",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-      image: "/projects/ecommerce.jpg",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/jenirfs/ecommerce",
+      title: "Casely Group Projects",
+      description: "Modern websites for diverse clients including lawyers, doctors, and businesses. Features AI generative tools, dashboards, and payment systems.",
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "AI Integration"],
+      image: "/projects/casely.jpg",
+      liveUrl: "https://caselygroup.com",
+      githubUrl: "https://github.com/jenirfs",
+      featured: true,
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      image: "/projects/taskapp.jpg",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/jenirfs/taskapp",
+      title: "UI/UX Academic Project",
+      description: "Monetizable app functionality with comprehensive wireframes and interactive prototypes. Academic project developed at Inatel.",
+      technologies: ["Figma", "Prototyping", "UX Research", "Wireframing"],
+      image: "/projects/inatel-ux.jpg",
+      liveUrl: "#",
+      githubUrl: "https://github.com/jenirfs",
+      featured: true,
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-      technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind CSS"],
-      image: "/projects/weather.jpg",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/jenirfs/weather",
+      title: "Personal Portfolio",
+      description: "This responsive portfolio website built with Next.js, featuring modern design, animations, and optimized performance.",
+      technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
+      image: "/projects/portfolio.jpg",
+      liveUrl: "https://jenirfs.dev",
+      githubUrl: "https://github.com/jenirfs/devfolio",
+      featured: true,
     },
   ];
 

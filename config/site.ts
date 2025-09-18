@@ -1,13 +1,15 @@
 export const siteConfig = {
   name: "Jeniffer Souza",
-  title: "Software Engineer",
-  description: "JS is my name, and my code. Portfolio of Jeniffer Souza, a frontend software engineer specialized in JavaScript and Next.js.",
-  slogan: "JS is my name, and my code.",
+  title: "Software Engineer | Frontend Developer",
+  description: "Building scalable, accessible, and modern web applications. Software Engineer passionate about creating fast, user-focused digital experiences.",
+  slogan: "Building scalable, accessible, and modern web applications.",
   
   // Navigation
   nav: [
     { name: "About me", href: "#about" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
   ],
   
@@ -15,8 +17,8 @@ export const siteConfig = {
   social: {
     github: "https://github.com/jenirfs",
     linkedin: "https://linkedin.com/in/jenirfs",
-    twitter: "https://twitter.com/jenirfs",
     email: "mailto:jenirfs@example.com",
+    cv: "/cv-jeniffer-souza.pdf", // Add your CV PDF here
   },
   
   // Site URLs

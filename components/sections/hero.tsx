@@ -26,7 +26,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto"
           >
-            {siteConfig.title} specialized in React and Next.js
+            {siteConfig.title}
           </motion.p>
           
           <motion.p 
@@ -41,16 +41,22 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12"
           >
             <a
-              href="#projects"
-              className="px-8 py-3 bg-[#84ADFF] text-[#101F3D] font-semibold rounded-lg hover:bg-[#84ADFF]/90 transition-colors"
+              href={siteConfig.social.cv}
+              className="px-8 py-3 bg-[#84ADFF] text-[#101F3D] font-semibold rounded-lg hover:bg-[#84ADFF]/90 transition-colors flex items-center gap-2"
             >
-              View My Work
+              📄 Download CV
             </a>
             <a
-              href="#contact"
-              className="px-8 py-3 border-2 border-[#84ADFF] text-[#84ADFF] font-semibold rounded-lg hover:bg-[#84ADFF] hover:text-[#101F3D] transition-colors"
+              href={siteConfig.social.linkedin}
+              className="px-8 py-3 border-2 border-[#84ADFF] text-[#84ADFF] font-semibold rounded-lg hover:bg-[#84ADFF] hover:text-[#101F3D] transition-colors flex items-center gap-2"
             >
-              Get In Touch
+              🔗 LinkedIn
+            </a>
+            <a
+              href={siteConfig.social.github}
+              className="px-8 py-3 border-2 border-[#84ADFF] text-[#84ADFF] font-semibold rounded-lg hover:bg-[#84ADFF] hover:text-[#101F3D] transition-colors flex items-center gap-2"
+            >
+              💻 GitHub
             </a>
           </motion.div>
         </motion.div>

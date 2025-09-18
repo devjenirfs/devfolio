@@ -31,15 +31,16 @@ export default function About() {
             className="max-w-4xl mx-auto space-y-6 text-lg text-gray-600"
           >
             <p>
-              I&apos;m a passionate frontend software engineer with a love for creating 
-              beautiful, functional, and user-friendly web applications. With expertise 
-              in modern JavaScript frameworks and a keen eye for design, I bring ideas 
-              to life through clean, efficient code.
+              I&apos;m a Software Engineer passionate about creating fast, user-focused, 
+              and scalable digital experiences. With experience in React, Next.js, 
+              TypeScript, and Tailwind, I enjoy transforming ideas into elegant and 
+              efficient solutions.
             </p>
             <p>
-              When I&apos;m not coding, you can find me exploring new technologies, 
-              contributing to open source projects, or sharing knowledge with the 
-              developer community.
+              I thrive in international agile teams and love building interfaces that 
+              balance performance, usability, and innovation. Currently working as 
+              Software Engineer II at Casely Group, where I develop modern web applications 
+              for diverse clients including lawyers, doctors, and businesses.
             </p>
           </motion.div>
           
