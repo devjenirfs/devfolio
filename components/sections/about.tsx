@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
 
 export default function About() {
   const skills = [
@@ -76,13 +76,27 @@ export default function About() {
           >
             <h3 className="text-4xl font-bold text-[#101F3D] text-center">Skills & Technologies</h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {skills.map((skill) => (
-                <span
+              {skills.map((skill, index) => (
+                <motion.span
                   key={skill}
                   className="px-6 py-4 bg-gray-100 text-[#101F3D] rounded-full border border-gray-200 hover:border-[#84ADFF] hover:bg-[#84ADFF]/10 transition-all duration-300 text-lg font-medium shadow-sm hover:shadow-md"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    transition: { 
+                      delay: index * 0.1,
+                      duration: 0.3 
+                    }
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -2,
+                    transition: { duration: 0.2 }
+                  }}
                 >
                   {skill}
-                </span>
+                </motion.span>
               ))}
             </div>
           </motion.div>

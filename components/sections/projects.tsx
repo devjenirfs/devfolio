@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { fadeInUp, staggerContainer, scaleIn, bounceIn, glowAnimation } from "@/lib/animations";
 
 export default function Projects() {
   // Real case studies with impact and metrics
@@ -60,8 +60,15 @@ export default function Projects() {
             {projects.map((project) => (
               <motion.div
                 key={project.id}
-                variants={fadeInUp}
+                variants={bounceIn}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                whileTap={{ scale: 0.98 }}
               >
                 <div className="p-10 space-y-8">
                   <div className="space-y-4">
@@ -98,13 +105,26 @@ export default function Projects() {
                   </div>
                   
                   <div className="flex flex-wrap gap-3">
-                    {project.technologies.map((tech) => (
-                      <span
+                    {project.technologies.map((tech, index) => (
+                      <motion.span
                         key={tech}
                         className="px-4 py-2 bg-gray-100 text-[#101F3D] text-sm rounded-full border border-gray-200 hover:border-[#84ADFF] hover:bg-[#84ADFF]/10 transition-all duration-300 font-medium"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ 
+                          opacity: 1, 
+                          scale: 1,
+                          transition: { 
+                            delay: index * 0.1,
+                            duration: 0.3 
+                          }
+                        }}
+                        whileHover={{ 
+                          scale: 1.05,
+                          transition: { duration: 0.2 }
+                        }}
                       >
                         {tech}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                   

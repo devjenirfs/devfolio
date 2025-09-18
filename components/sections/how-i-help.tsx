@@ -33,7 +33,7 @@ export default function HowIHelp() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="how-i-help" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial="initial"

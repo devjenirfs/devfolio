@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +17,22 @@ export default function Header() {
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between">
           {/* Logo JS no canto esquerdo */}
-          <Image
-            src="/logos/JS-logo.png"
-            alt="JS logo"
-            height={40}
-            width={40}
-            className="hover:scale-105 transition-transform"
-          />
+          <motion.div
+            whileHover={{ 
+              scale: 1.1,
+              rotate: [0, -5, 5, 0],
+              transition: { duration: 0.5 }
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Image
+              src="/logos/JS-logo.png"
+              alt="JS logo"
+              height={40}
+              width={40}
+              className="transition-all duration-300"
+            />
+          </motion.div>
     
           {/* Slogan centralizado */}
           <p className="text-sm text-slate-300 italic tracking-wide text-center">
@@ -31,14 +41,19 @@ export default function Header() {
     
           {/* Navegação à direita */}
           <nav className="flex gap-6 text-sm font-medium tracking-wide">
-            {['About me', 'Projects', 'How I help', 'Contact'].map((item) => (
+            {[
+              { name: 'About me', href: '#about' },
+              { name: 'Projects', href: '#projects' },
+              { name: 'How I help', href: '#how-i-help' },
+              { name: 'Contact', href: '#contact' }
+            ].map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="relative group cursor-pointer transition-colors hover:text-blue-300"
+                key={item.name}
+                href={item.href}
+                className="relative group cursor-pointer transition-all duration-300 hover:text-[#84ADFF] hover:scale-105"
               >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-blue-400 transition-all group-hover:w-full" />
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#84ADFF] transition-all group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -47,13 +62,22 @@ export default function Header() {
         {/* Mobile Layout */}
         <div className="md:hidden flex items-center justify-between">
           {/* Logo JS */}
-          <Image
-            src="/logos/JS-logo.png"
-            alt="JS logo"
-            height={32}
-            width={32}
-            className="hover:scale-105 transition-transform"
-          />
+          <motion.div
+            whileHover={{ 
+              scale: 1.1,
+              rotate: [0, -5, 5, 0],
+              transition: { duration: 0.5 }
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Image
+              src="/logos/JS-logo.png"
+              alt="JS logo"
+              height={32}
+              width={32}
+              className="transition-all duration-300"
+            />
+          </motion.div>
 
           {/* Slogan */}
           <p className="text-xs text-slate-300 italic tracking-wide text-center flex-1 mx-4">
@@ -76,14 +100,19 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-white/20">
             <nav className="flex flex-col gap-4 pt-4">
-              {['About me', 'Projects', 'How I help', 'Contact'].map((item) => (
+              {[
+                { name: 'About me', href: '#about' },
+                { name: 'Projects', href: '#projects' },
+                { name: 'How I help', href: '#how-i-help' },
+                { name: 'Contact', href: '#contact' }
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-sm font-medium tracking-wide hover:text-blue-300 transition-colors py-2"
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium tracking-wide hover:text-[#84ADFF] transition-all duration-300 py-2 hover:translate-x-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </nav>
