@@ -1,13 +1,19 @@
-"use client";
-import Header from '@/components/globals/header';
-import React from 'react';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
+import Hero from '@/components/sections/hero';
+import About from '@/components/sections/about';
+import Projects from '@/components/sections/projects';
+import Contact from '@/components/sections/contact';
 
 export default function HomePage() {
   return (
     <div>
-      <Header/>
-
+      <Header />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
-    
   );
 }
