@@ -4,8 +4,46 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import { submitContactForm } from "@/features/contact/actions";
+import { useState } from "react";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const result = await submitContactForm(data);
+      setMessage({
+        type: result.success ? 'success' : 'error',
+        text: result.message
+      });
+      
+      if (result.success) {
+        // Reset form
+        (e.target as HTMLFormElement).reset();
+      }
+    } catch {
+      setMessage({
+        type: 'error',
+        text: 'An unexpected error occurred. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-[#101F3D] text-white">
       <div className="max-w-6xl mx-auto px-6">
@@ -89,7 +127,23 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-              <form className="space-y-6">
+              
+              {/* Success/Error Message */}
+              {message && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg mb-6 ${
+                    message.type === 'success' 
+                      ? 'bg-green-500/20 border border-green-500/30 text-green-300' 
+                      : 'bg-red-500/20 border border-red-500/30 text-red-300'
+                  }`}
+                >
+                  {message.text}
+                </motion.div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
@@ -131,9 +185,17 @@ export default function Contact() {
                 
                 <Button 
                   type="submit"
-                  className="w-full bg-[#84ADFF] text-[#101F3D] hover:bg-[#84ADFF]/90"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#84ADFF] text-[#101F3D] hover:bg-[#84ADFF]/90 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 border-2 border-[#101F3D] border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </div>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </form>
             </div>

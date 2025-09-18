@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeInUp, bounceIn } from "@/lib/animations";
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -62,9 +63,11 @@ export default function Hero() {
                   ease: "easeInOut"
                 }}
               >
-                <img
+                <Image
                   src="/jeniffer.jpg"
                   alt="Jeniffer Souza - Software Engineer"
+                  width={192}
+                  height={192}
                   className="w-full h-full object-cover"
                 />
               </motion.div>

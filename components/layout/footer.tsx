@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -23,9 +24,11 @@ export default function Footer() {
                 boxShadow: "0 0 20px rgba(132, 173, 255, 0.5)"
               }}
             >
-              <img
+              <Image
                 src="/jeniffer.jpg"
                 alt="Jeniffer Souza"
+                width={96}
+                height={96}
                 className="w-full h-full object-cover"
               />
             </motion.div>

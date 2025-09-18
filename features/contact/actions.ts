@@ -1,22 +1,18 @@
 "use server";
 
 import { contactFormSchema, type ContactFormData } from "./schema";
+import { sendEmailWithResend } from "@/lib/email";
 
 export async function submitContactForm(data: ContactFormData) {
   try {
     // Validate the form data
     const validatedData = contactFormSchema.parse(data);
     
-    // Here you would typically:
-    // 1. Send email using a service like Resend, SendGrid, or Nodemailer
-    // 2. Save to database
-    // 3. Send notification to admin
+    // Send email using Resend (you can change this to EmailJS or Nodemailer)
+    await sendEmailWithResend(validatedData);
     
-    // For now, we'll just log the data
+    // Log successful submission
     console.log("Contact form submission:", validatedData);
-    
-    // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1000));
     
     return {
       success: true,
