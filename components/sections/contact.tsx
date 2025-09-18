@@ -48,7 +48,7 @@ export default function Contact() {
                         href={siteConfig.social.email}
                         className="text-slate-300 hover:text-[#84ADFF] transition-colors"
                       >
-                        jenirfs@example.com
+                        jenifferap@gmail.com
                       </a>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function Contact() {
                         href={siteConfig.social.github}
                         className="text-slate-300 hover:text-[#84ADFF] transition-colors"
                       >
-                        github.com/jenirfs
+                        github.com/devjenirfs
                       </a>
                     </div>
                   </div>

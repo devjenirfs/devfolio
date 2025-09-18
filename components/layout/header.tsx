@@ -23,10 +23,10 @@ export default function Header() {
   
       {/* Navegação à direita */}
       <nav className="flex gap-6 text-sm font-medium tracking-wide">
-        {['About me', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
+        {['About me', 'Projects', 'How I help', 'Contact'].map((item) => (
           <a
             key={item}
-            href={`#${item.toLowerCase().replace(' ', '')}`}
+            href={`#${item.toLowerCase().replace(' ', '-')}`}
             className="relative group cursor-pointer transition-colors hover:text-blue-300"
           >
             {item}

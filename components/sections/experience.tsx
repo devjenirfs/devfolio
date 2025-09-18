@@ -6,19 +6,19 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 export default function Experience() {
   const experiences = [
     {
-      period: "2025",
+      period: "2024 - 2025",
       title: "Software Engineer II",
       company: "Casely Group",
       location: "Remote, USA",
-      description: "Developing modern web applications for diverse clients including lawyers, doctors, and businesses. Implementing AI generative tools, dashboards, and payment systems.",
+      description: "Developed modern web applications for diverse clients including lawyers, doctors, and businesses. Implemented AI generative tools, dashboards, and payment systems.",
       type: "work"
     },
     {
-      period: "2024",
+      period: "2023 - 2024",
       title: "Software Engineer",
       company: "Casely Group",
       location: "Remote, USA",
-      description: "Frontend development using React, Next.js, and TypeScript. Collaborating in international agile teams to deliver scalable solutions.",
+      description: "Frontend development using React, Next.js, and TypeScript. Collaborated in international agile teams to deliver scalable solutions.",
       type: "work"
     },
     {

@@ -7,18 +7,17 @@ export const siteConfig = {
   // Navigation
   nav: [
     { name: "About me", href: "#about" },
-    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
+    { name: "How I help", href: "#how-i-help" },
     { name: "Contact", href: "#contact" },
   ],
   
   // Social links
   social: {
-    github: "https://github.com/jenirfs",
+    github: "https://github.com/devjenirfs",
     linkedin: "https://linkedin.com/in/jenirfs",
-    email: "mailto:jenirfs@example.com",
-    cv: "/cv-jeniffer-souza.pdf", // Add your CV PDF here
+    email: "mailto:jenifferap@gmail.com",
+    cv: "/CV-JenifferSouza.pdf",
   },
   
   // Site URLs

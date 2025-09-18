@@ -2,9 +2,9 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
 import About from '@/components/sections/about';
-import Skills from '@/components/sections/skills';
+import MiniStats from '@/components/sections/mini-stats';
 import Projects from '@/components/sections/projects';
-import Experience from '@/components/sections/experience';
+import HowIHelp from '@/components/sections/how-i-help';
 import Contact from '@/components/sections/contact';
 
 export default function HomePage() {
@@ -13,9 +13,9 @@ export default function HomePage() {
       <Header />
       <Hero />
       <About />
-      <Skills />
+      <MiniStats />
       <Projects />
-      <Experience />
+      <HowIHelp />
       <Contact />
       <Footer />
     </div>

@@ -4,107 +4,116 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Projects() {
-  // Real projects based on Jeniffer's experience
+  // Real case studies with impact and metrics
   const projects = [
     {
       id: 1,
-      title: "Casely Group Projects",
-      description: "Modern websites for diverse clients including lawyers, doctors, and businesses. Features AI generative tools, dashboards, and payment systems.",
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "AI Integration"],
-      image: "/projects/casely.jpg",
-      liveUrl: "https://caselygroup.com",
-      githubUrl: "https://github.com/jenirfs",
+      title: "CSIMS – Institutional Website",
+      role: "Frontend Engineer (team)",
+      stack: "Next.js, TypeScript, React, Tailwind CSS",
+      challenge: "Build a modern institutional website focused on clarity, performance, and accessibility.",
+      whatBuilt: "Reusable components, responsive layouts, improved navigation and page structure for content-heavy sections.",
+      impact: "Applied SEO & a11y basics (semantic HTML, headings, alt text). Clean, maintainable component system.",
+      technologies: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+      image: "/projects/csims.jpg",
+      liveUrl: "https://csims.org/",
       featured: true,
     },
     {
       id: 2,
-      title: "UI/UX Academic Project",
-      description: "Monetizable app functionality with comprehensive wireframes and interactive prototypes. Academic project developed at Inatel.",
-      technologies: ["Figma", "Prototyping", "UX Research", "Wireframing"],
-      image: "/projects/inatel-ux.jpg",
-      liveUrl: "#",
-      githubUrl: "https://github.com/jenirfs",
-      featured: true,
-    },
-    {
-      id: 3,
-      title: "Personal Portfolio",
-      description: "This responsive portfolio website built with Next.js, featuring modern design, animations, and optimized performance.",
-      technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-      image: "/projects/portfolio.jpg",
-      liveUrl: "https://jenirfs.dev",
-      githubUrl: "https://github.com/jenirfs/devfolio",
+      title: "Contreras Law – Law Firm Website",
+      role: "Frontend Engineer (solo)",
+      stack: "Next.js, TypeScript, React, Tailwind CSS",
+      challenge: "Solo build of a fast and reliable website for a law firm to increase trust and lead capture.",
+      whatBuilt: "Information architecture, UI design, responsive behavior, and SEO foundations.",
+      impact: "Core Web Vitals oriented (Lighthouse-friendly structure). Clean, responsive design with accessible components.",
+      technologies: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+      image: "/projects/contreras-law.jpg",
+      liveUrl: "https://contreras-law.com/",
       featured: true,
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="space-y-16"
+          className="space-y-20"
         >
           <motion.div 
             variants={fadeInUp}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#101F3D] mb-4">
-              Featured Projects
+            <h2 className="text-5xl md:text-6xl font-bold text-[#101F3D] mb-8">
+              Recent Work
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here are some of my recent projects that showcase my skills and passion for web development.
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Real projects with measurable impact, built for clients who needed scalable, accessible solutions.
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-12">
             {projects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={fadeInUp}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
               >
-                <div className="h-48 bg-gradient-to-br from-[#101F3D] to-[#203660] flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">
-                    {project.title}
-                  </span>
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-semibold text-[#101F3D]">
-                    {project.title}
-                  </h3>
+                <div className="p-10 space-y-8">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl font-bold text-[#101F3D]">
+                      {project.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-6 text-lg text-gray-600">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-[#84ADFF] rounded-full"></div>
+                        <span><strong className="text-[#101F3D]">Role:</strong> {project.role}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-[#84ADFF] rounded-full"></div>
+                        <span><strong className="text-[#101F3D]">Stack:</strong> {project.stack}</span>
+                      </div>
+                    </div>
+                  </div>
                   
-                  <p className="text-gray-600 text-sm">
-                    {project.description}
-                  </p>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-xl font-bold text-[#101F3D] mb-3">Challenge:</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed">{project.challenge}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-bold text-[#101F3D] mb-3">What I built:</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed">{project.whatBuilt}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-bold text-[#101F3D] mb-3">Impact:</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed">{project.impact}</p>
+                    </div>
+                  </div>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-[#84ADFF]/10 text-[#101F3D] text-xs rounded border border-[#84ADFF]/20"
+                        className="px-4 py-2 bg-gray-100 text-[#101F3D] text-sm rounded-full border border-gray-200 hover:border-[#84ADFF] hover:bg-[#84ADFF]/10 transition-all duration-300 font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                   
-                  <div className="flex gap-3 pt-2">
+                  <div className="flex gap-4 pt-4">
                     <a
                       href={project.liveUrl}
-                      className="text-[#84ADFF] hover:text-[#101F3D] text-sm font-medium transition-colors"
+                      className="text-[#84ADFF] hover:text-[#101F3D] font-semibold text-lg transition-colors flex items-center gap-2"
                     >
-                      Live Demo →
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="text-[#84ADFF] hover:text-[#101F3D] text-sm font-medium transition-colors"
-                    >
-                      GitHub →
+                      View Live Site →
                     </a>
                   </div>
                 </div>
